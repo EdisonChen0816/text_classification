@@ -1,6 +1,6 @@
 # encoding=utf-8
 import tensorflow as tf
-from pyhanlp import HanLP
+import jieba
 import numpy as np
 import random
 
@@ -42,8 +42,7 @@ class TextCNN:
                 text, tag = line.replace('\n', '').split('\t')
                 if tag not in self.label:
                     self.label[tag] = len(self.label)
-                for term in HanLP.segment(text):
-                    word = term.word
+                for word in jieba.lcut(text):
                     if word in self.w2v:
                         embedding.append(self.w2v[word])
                 if len(embedding) < self.max_len:
