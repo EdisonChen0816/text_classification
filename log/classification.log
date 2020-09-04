@@ -1,0 +1,9 @@
+2020-09-04 14:17:29,972|INFO:epoch:0, batch: 1, current loss: 0.000000
+2020-09-04 14:17:36,954|INFO:epoch:1, batch: 1, current loss: 0.000000
+2020-09-04 14:17:43,750|INFO:epoch:2, batch: 1, current loss: 0.000000
+2020-09-04 14:17:50,259|INFO:epoch:3, batch: 1, current loss: 0.000000
+2020-09-04 14:19:43,282|INFO:epoch:0, batch: 1, current loss: 0.199476
+2020-09-04 14:19:49,753|INFO:epoch:1, batch: 1, current loss: 0.044809
+2020-09-04 14:19:55,914|INFO:epoch:2, batch: 1, current loss: 0.010214
+2020-09-04 14:20:02,286|INFO:epoch:3, batch: 1, current loss: 0.003620
+2020-09-04 14:20:08,930|INFO:epoch:4, batch: 1, current loss: 0.001118

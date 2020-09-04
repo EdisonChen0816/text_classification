@@ -1,6 +1,6 @@
 # path
-train_path: ./data/train.txt
-eval_path: ./data/eval.txt
+train_path: ./data/data
+eval_path: ./data/data
 model_path: ./model/textcnn/model
 summary_path: ./model/textcnn/summary_path
 predict_path: ./model/textcnn

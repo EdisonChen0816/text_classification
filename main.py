@@ -33,7 +33,7 @@ def test_cnntext():
         'loss': 'adam',
         'rate': 0.01,
         'epoch': 20,
-        'batch_size': 512,
+        'batch_size': 4096,
         'dropout': 0.1,
         'model_path': config['model_path'],
         'summary_path': config['summary_path'],
