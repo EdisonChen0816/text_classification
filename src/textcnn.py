@@ -50,7 +50,7 @@ class TextCNN:
                         embedding.append([0] * self.dim)
                 else:
                     embedding = embedding[: self.max_len]
-                data.append([embedding, self.label[tag]])
+                data.append([embedding, [self.label[tag]]])
         return np.asarray(data)
 
     def batch_yield(self, data, shuffle=True):
@@ -78,10 +78,10 @@ class TextCNN:
     def fit(self):
         data = self.get_input_feature(self.train_data)
         x = tf.placeholder(shape=[None, self.max_len, self.dim], dtype=tf.float32, name='x')
-        y = tf.placeholder(shape=[None], dtype=tf.float32, name='y')
+        y = tf.placeholder(shape=[None, 1], dtype=tf.float32, name='y')
         x_input = tf.reshape(x, shape=[-1, self.max_len, self.dim, 1])
         dropout = tf.placeholder(dtype=tf.float32, name='dropout')
-        logits = self.conv_net(x_input, drop_rate)
+        logits = self.conv_net(x_input, dropout)
         tf.add_to_collection("logits", logits)
         cross_loss = tf.nn.softmax_cross_entropy_with_logits(logits=logits, labels=y)
         loss = tf.reduce_mean(cross_loss)
