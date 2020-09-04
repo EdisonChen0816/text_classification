@@ -97,7 +97,7 @@ class TextCNN:
             for i in range(self.epoch):
                 for step, (seqs, labels) in enumerate(self.batch_yield(data)):
                     _, curr_loss = sess.run([optim, loss], feed_dict={x: seqs, y: labels, dropout: self.dropout})
-                    if step % 10 == 0:
+                    if (step + 1) % 10 == 0:
                         print("epoch:%d, batch: %d, current loss: %f" % (i, step+1, curr_loss))
             saver.save(sess, self.model_path)
             tf.summary.FileWriter(self.summary_path, sess.graph)
